@@ -15,7 +15,7 @@ class MealDetailScreen extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Text(
         text,
-        style: Theme.of(context).textTheme.title,
+        style: Theme.of(context).textTheme.headline6,
       ),
     );
   }
@@ -40,7 +40,7 @@ class MealDetailScreen extends StatelessWidget {
     final routeArgs =
         ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
     final mealId = routeArgs['id'];
-    final selectedMeal = DUMMY_MEALS.firstWhere((meal) => meal.id == mealId);
+    final selectedMeal = dummyMeals.firstWhere((meal) => meal.id == mealId);
     return Scaffold(
       appBar: AppBar(
         title: Text('${selectedMeal.title}'),

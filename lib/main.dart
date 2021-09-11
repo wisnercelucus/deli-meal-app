@@ -20,14 +20,14 @@ class _MyAppState extends State<MyApp> {
     'vegan': false,
     'vegetarian': false,
   };
-  List<Meal> _availableMeals = DUMMY_MEALS;
+  List<Meal> _availableMeals = dummyMeals;
   List<Meal> _favoriteMeals = [];
 
   void _setFilters(Map<String, bool> filterData) {
     setState(() {
       _filters = filterData;
 
-      _availableMeals = DUMMY_MEALS.where((meal) {
+      _availableMeals = dummyMeals.where((meal) {
         if (_filters['gluten']! && !meal.isGlutenFree) {
           return false;
         }
@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
     } else {
       setState(() {
         _favoriteMeals.add(
-          DUMMY_MEALS.firstWhere((meal) => meal.id == mealId),
+          dummyMeals.firstWhere((meal) => meal.id == mealId),
         );
       });
     }
